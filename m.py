@@ -119,7 +119,7 @@ def generate_key_command(message):
         else:
             response = "𝐔𝐬𝐚𝐠𝐞: /genkey <amount> <hours/days>"
     else:
-        response = "𝐎𝐧𝐥𝐲 𝐏𝐚𝐩𝐚 𝐎𝐟 𝐛𝐨𝐭 𝐜𝐚𝐧 𝐝𝐨 𝐭𝐡𝐢𝐬"
+        response = "You Are Not Authorized To Use This Command 😡."
 
     bot.reply_to(message, response)
 
@@ -200,14 +200,16 @@ def handle_bgmi(message):
         else:
             response = "✅Usage: /bgmi <target> <port> <time>"
     else:
-        response = "𝐁𝐒𝐃𝐊 𝐆𝐀𝐑𝐄𝐄𝐁 𝐀𝐂𝐂𝐄𝐒𝐒 𝐍𝐀𝐇𝐈 𝐇 𝐓𝐄𝐑𝐏𝐄"
+        response = "🚫 Unauthorized Access! 🚫
+
+Oops! It seems like you don't have permission to use the /bgmi command. DM TO BUY ACCESS:- @King_u1"
 
     bot.reply_to(message, response)
 
 def start_attack_reply(message, target, port, time):
     user_info = message.from_user
     username = user_info.username if user_info.username else user_info.first_name
-    response = f"{username}, 🔥𝐂𝐇𝐔𝐃𝐀𝐈 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥\n\n🎯𝐓𝐀𝐑𝐆𝐄𝐓: {target}\n🚪𝐏𝐎𝐑𝐓: {port}\n⏳𝐓𝐢𝐌𝐄: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐄𝐓𝐇𝐎𝐃: 𝐆𝐔𝐋𝐀𝐁𝐈𝐄 𝐏𝐔𝐒𝐒𝐘🥵"
+    response = f"{username}, 𝐀𝐓𝐓𝐀𝐂𝐊 𝐒𝐓𝐀𝐑𝐓𝐄𝐃.🔥🔥\n\n🎯𝐓𝐀𝐑𝐆𝐄𝐓: {target}\n🚪𝐏𝐎𝐑𝐓: {port}\n⏳𝐓𝐢𝐌𝐄: {time} 𝐒𝐞𝐜𝐨𝐧𝐝𝐬\n𝐌𝐄𝐓𝐇𝐎𝐃: VIP- User of @King_u1"
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['clearlogs'])
@@ -216,7 +218,7 @@ def clear_logs_command(message):
     if user_id in admin_id:
         response = clear_logs()
     else:
-        response = "𝐀𝐁𝐄 𝐆𝐀𝐍𝐃𝐔 𝐉𝐈𝐒𝐊𝐀 𝐁𝐎𝐓 𝐇 𝐖𝐀𝐇𝐈 𝐔𝐒𝐄 𝐊𝐑 𝐒𝐊𝐓𝐀 𝐄𝐒𝐄 𝐁𝐀𝐒."
+        response = "𝐎𝐍𝐋𝐘 𝐎𝐖𝐍𝐄𝐑 𝐂𝐀𝐍 𝐑𝐔𝐍 𝐓𝐇𝐀𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃"
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['allusers'])
@@ -224,7 +226,7 @@ def show_all_users(message):
     user_id = str(message.chat.id)
     if user_id in admin_id:
         if users:
-            response = "𝐂𝐇𝐔𝐓𝐘𝐀 𝐔𝐒𝐑𝐄𝐑 𝐋𝐈𝐒𝐓:\n"
+            response = "𝐔𝐒𝐑𝐄𝐑 𝐋𝐈𝐒𝐓:\n"
             for user_id, expiration_date in users.items():
                 try:
                     user_info = bot.get_chat(int(user_id))
@@ -235,7 +237,7 @@ def show_all_users(message):
         else:
             response = "𝐀𝐣𝐢 𝐋𝐚𝐧𝐝 𝐌𝐞𝐫𝐚"
     else:
-        response = "𝐁𝐇𝐀𝐆𝐉𝐀 𝐁𝐒𝐃𝐊 𝐎𝐍𝐋𝐘 𝐎𝐖𝐍𝐄𝐑 𝐂𝐀𝐍 𝐃𝐎 𝐓𝐇𝐀𝐓"
+        response = "𝐎𝐍𝐋𝐘 𝐎𝐖𝐍𝐄𝐑 𝐂𝐀𝐍 𝐃𝐎 𝐓𝐇𝐀𝐓"
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['logs'])
@@ -247,13 +249,13 @@ def show_recent_logs(message):
                 with open(LOG_FILE, "rb") as file:
                     bot.send_document(message.chat.id, file)
             except FileNotFoundError:
-                response = "𝐀𝐣𝐢 𝐥𝐚𝐧𝐝 𝐦𝐞𝐫𝐚 𝐍𝐎 𝐃𝐀𝐓𝐀 𝐅𝐎𝐔𝐍𝐃."
+                response = "𝐍𝐎 𝐃𝐀𝐓𝐀 𝐅𝐎𝐔𝐍𝐃."
                 bot.reply_to(message, response)
         else:
-            response = "𝐀𝐣𝐢 𝐥𝐚𝐧𝐝 𝐦𝐞𝐫𝐚 𝐌𝐄𝐑𝐀 𝐍𝐎 𝐃𝐀𝐓𝐀 𝐅𝐎𝐔𝐍𝐃"
+            response = "𝐍𝐎 𝐃𝐀𝐓𝐀 𝐅𝐎𝐔𝐍𝐃"
             bot.reply_to(message, response)
     else:
-        response = "𝐁𝐇𝐀𝐆𝐉𝐀 𝐁𝐒𝐃𝐊 𝐎𝐍𝐋𝐘 𝐎𝐖𝐍𝐄𝐑 𝐂𝐀𝐍 𝐑𝐔𝐍 𝐓𝐇𝐀𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃"
+        response = "𝐎𝐍𝐋𝐘 𝐎𝐖𝐍𝐄𝐑 𝐂𝐀𝐍 𝐑𝐔𝐍 𝐓𝐇𝐀𝐓 𝐂𝐎𝐌𝐌𝐀𝐍𝐃"
         bot.reply_to(message, response)
 
 @bot.message_handler(commands=['id'])
@@ -277,13 +279,13 @@ def show_command_logs(message):
         except FileNotFoundError:
             response = "No command logs found."
     else:
-        response = "𝐘𝐄 𝐆𝐀𝐑𝐄𝐄𝐁 𝐄𝐒𝐊𝐈 𝐌𝐀𝐊𝐈 𝐂𝐇𝐔𝐓 𝐀𝐂𝐂𝐄𝐒𝐒 𝐇𝐈 𝐍𝐀𝐇𝐈 𝐇 𝐄𝐒𝐊𝐄 𝐏𝐀𝐒"
+        response = "𝐘𝐄 You Don't have Access"
 
     bot.reply_to(message, response)
 
 @bot.message_handler(commands=['help'])
 def show_help(message):
-    help_text = '''𝐌𝐄𝐑𝐀 𝐋𝐀𝐍𝐃 𝐊𝐀𝐑𝐄 𝐇𝐄𝐋𝐏 𝐓𝐄𝐑𝐈 𝐋𝐄 𝐅𝐈𝐑 𝐁𝐇𝐈 𝐁𝐀𝐓𝐀 𝐃𝐄𝐓𝐀:
+    help_text = '''🤖 Available commands:
 💥 /bgmi: Method For Bgmi Servers.
 💥 /rules: Please Check Before Use !!.
 💥 /mylogs: To Check Your Recents Attacks.
