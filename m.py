@@ -298,6 +298,8 @@ def show_help(message):
 💥 /logs: All Users Logs.
 💥 /clearlogs: Clear The Logs File.
 💥 /broadcast <message>: Broadcast a Message.
+
+Buy From :- @King_u1
 '''
     bot.reply_to(message, help_text)
 
