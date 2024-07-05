@@ -200,9 +200,7 @@ def handle_bgmi(message):
         else:
             response = "✅Usage: /bgmi <target> <port> <time>"
     else:
-        response = "🚫 Unauthorized Access! 🚫
-
-Oops! It seems like you don't have permission to use the /bgmi command. DM TO BUY ACCESS:- @King_u1"
+        response = "🚫 Unauthorized Access! 🚫"
 
     bot.reply_to(message, response)
 
